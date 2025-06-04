@@ -1,21 +1,21 @@
 import Header from "./components/header/Header";
 import WeatherBoard from "./components/weather/WeatherBoard";
-import { FavoriteProvider, WeatherProvider } from "./provider";
+import Page from "./Page";
+import {
+  FavoriteProvider,
+  LocationProvider,
+  WeatherProvider,
+} from "./provider";
 
 function App() {
   return (
-    <div className="bg-body font-[Roboto] text-light bg-[url('../assets/body-bg.png')] bg-no-repeat bg-cover h-screen grid place-items-center">
+    <LocationProvider>
       <WeatherProvider>
         <FavoriteProvider>
-          <Header />
-          <main>
-            <section>
-              <WeatherBoard />
-            </section>
-          </main>
+          <Page />
         </FavoriteProvider>
       </WeatherProvider>
-    </div>
+    </LocationProvider>
   );
 }
 
